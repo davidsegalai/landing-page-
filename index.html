@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>הטמעת בינה מלאכותית במוסדות החינוך – העתיד מתחיל עכשיו!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>הכשרת מורים בעידן הבינה המלאכותית</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhKN1pe/S2ncnlwR6njdlZ/jM5zNbeTTZBp2WWPBehf3plT9NlcYk8w4F0cv1dtg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     * {
       margin: 0;
@@ -27,8 +33,10 @@
     }
 
     .hero {
+      position: relative;
       text-align: center;
       padding: 5rem 1rem;
+      overflow: hidden;
       background: linear-gradient(135deg, #2b4c7d 0%, #1a365d 100%);
       color: white;
     }
@@ -36,10 +44,13 @@
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 1.5rem;
+      color: #ffffff;
+      font-weight: 700;
     }
 
     .hero h2 {
       font-size: 1.4rem;
+      color: #e2e8f0;
       margin: 0 auto 2rem auto;
       max-width: 700px;
       line-height: 1.6;
@@ -51,29 +62,34 @@
       color: #fff;
       padding: 1rem 2rem;
       border-radius: 0.5rem;
+      font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .btn-primary:hover {
       background: #2563eb;
+      transform: translateY(-2px);
     }
 
     section {
       padding: 4rem 1rem;
     }
 
-    h2 {
+    section h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 2.5rem;
       color: #1a365d;
+      font-weight: 700;
     }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      text-align: right;
     }
 
     .step-box {
@@ -81,64 +97,26 @@
       padding: 2rem;
       border-radius: 0.75rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
       border: 1px solid #e5e7eb;
     }
 
-    .testimonials-carousel {
-      position: relative;
-      overflow: hidden;
-      padding: 2rem 0;
+    .step-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
-    .carousel-inner {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-    }
-
-    .testimonial-card {
-      flex: 0 0 100%;
-      min-width: 100%;
-      padding: 0 15px;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .testimonial-card.active {
-      opacity: 1;
-    }
-
-    .testimonial {
-      background: white;
-      padding: 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-
-    .carousel-indicators {
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .carousel-indicator {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background: #cbd5e1;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .carousel-indicator.active {
-      background: #3b82f6;
-      transform: scale(1.3);
+    .step-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #2563eb;
     }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .feature-box {
@@ -146,6 +124,34 @@
       padding: 2rem;
       border-radius: 0.75rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: right;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: right;
+    }
+
+    .testimonial p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #4a5568;
+    }
+
+    .testimonial .author {
+      font-weight: 600;
+      color: #2563eb;
     }
 
     .contact-form {
@@ -157,12 +163,57 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #1a365d;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .contact-form button {
+      background: #3b82f6;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #2563eb;
+    }
+
     footer {
       background: #1a365d;
       color: white;
       text-align: center;
       padding: 2rem 0;
       margin-top: 4rem;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -177,119 +228,107 @@
 </head>
 <body>
   <div class="hero">
-    <h1>הטמעת בינה מלאכותית במוסדות החינוך – העתיד מתחיל עכשיו!</h1>
-    <h2>הצטרפו למהפכה הטכנולוגית בחינוך עם הרצאות וסדנאות מעשיות על כלי בינה מלאכותית, המותאמות במיוחד לצוותי הוראה ומנהלים.</h2>
-    <a href="#contact" class="btn-primary">הצטרפו למהפכה החינוכית</a>
+    <img src="/api/placeholder/120/120" alt="לוגו המכון להכשרת מורים בתחום הבינה המלאכותית" style="width:120px; margin-bottom:1rem;" />
+    <h1>עיצוב מחדש של החינוך בעידן הבינה המלאכותית</h1>
+    <h2>תכנית הכשרה מקצועית למורים המעוניינים להוביל את המהפכה הטכנולוגית בחינוך</h2>
+    <a href="#contact" class="btn-primary">הצטרפו למסלול ההכשרה</a>
   </div>
 
   <section class="container" id="how-it-works">
-    <h2>תכנית ההטמעה</h2>
+    <h2>תהליך ההכשרה</h2>
     <div class="steps">
       <div class="step-box">
-        <h3>📚 הרצאה בת שעתיים</h3>
-        <p>היכרות עם מגוון כלי בינה מלאכותית והדרכים לשלבם בהוראה היומיומית.</p>
+        <h3>הערכת מוכנות</h3>
+        <p>נתחיל בהערכה מקיפה של הידע והניסיון הקיימים שלכם בתחום הטכנולוגיה והבינה המלאכותית, ונבנה תכנית התפתחות אישית.</p>
       </div>
       <div class="step-box">
-        <h3>👥 ליווי מקצועי למשך 3 חודשים</h3>
-        <p>הדרכה ותמיכה בצוותים מובילים להטמעת AI בתהליכי הלמידה והניהול.</p>
+        <h3>הכשרה מעשית</h3>
+        <p>תקבלו הדרכה מעמיקה בשימוש בכלי בינה מלאכותית מובילים, תוך התמקדות ביישומים פדגוגיים ופיתוח מערכי שיעור חדשניים.</p>
       </div>
       <div class="step-box">
-        <h3>🎯 התאמה למוסדות חינוך</h3>
-        <p>תכנים המותאמים למדיניות משרד החינוך ולצרכים הייחודיים של כל מוסד.</p>
+        <h3>יישום וליווי</h3>
+        <p>נלווה אתכם ביישום הכלים בכיתה, נספק משוב מקצועי ונתמוך בהטמעה מוצלחת של טכנולוגיות חדשות במערך ההוראה.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="features">
+    <h2>יתרונות התכנית</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>מומחיות בכלים מתקדמים</h3>
+        <p>הכשרה מעמיקה בשימוש בכלי AI מובילים כמו ChatGPT ו-Midjourney, והתאמתם לצרכים פדגוגיים ספציפיים.</p>
+      </div>
+      <div class="feature-box">
+        <h3>פיתוח מקצועי מתמשך</h3>
+        <p>גישה לקהילת מורים מקצועית, סדנאות העשרה חודשיות ועדכונים שוטפים על חידושים בתחום.</p>
+      </div>
+      <div class="feature-box">
+        <h3>הסמכה מקצועית</h3>
+        <p>תעודת הסמכה מוכרת המעידה על התמחות בשילוב בינה מלאכותית בחינוך, המוכרת על ידי מוסדות חינוך מובילים.</p>
       </div>
     </div>
   </section>
 
   <section class="container" id="testimonials">
-    <h2>המלצות מהשטח</h2>
-    <div class="testimonials-carousel">
-      <div class="carousel-inner">
-        <!-- המלצות -->
-        <div class="testimonial-card active">
-          <div class="testimonial">
-            <p>"התוכנית שינתה את פני בית הספר שלנו! מעורבות התלמידים עלתה ב-40% תוך חודשיים בלבד."</p>
-            <div class="author">דני מור, מנהל תיכון עירוני ג'</div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial">
-            <p>"הסדנה המעשית נתנה לנו כלים מיידיים לשימוש בכיתה. ההבדל במעורבות התלמידים מורגש כבר מהשיעור הראשון!"</p>
-            <div class="author">עדנה כץ, רכזת פדגוגיה</div>
-          </div>
-        </div>
-        <!-- הוספתי עוד 7 המלצות -->
+    <h2>המלצות בוגרים</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"התכנית פתחה בפני אפשרויות חדשות בהוראה. היכולת לשלב כלי AI בצורה מושכלת שיפרה משמעותית את איכות השיעורים ואת מעורבות התלמידים."</p>
+        <div class="author">ד"ר מיכל כהן</div>
+        <div class="role">רכזת פדגוגית, תיכון מדעים</div>
       </div>
-      <div class="carousel-indicators"></div>
-    </div>
-  </section>
-
-  <section class="container" id="features">
-    <h2>היתרונות שלנו</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>🛠️ כלים מתקדמים</h3>
-        <p>הכשרה בכלי AI עדכניים עם התאמה מלאה לצרכי החינוך</p>
-      </div>
-      <div class="feature-box">
-        <h3>📈 מדידה והערכה</h3>
-        <p>מערכת מדדים מתקדמת למעקב אחרי ההתקדמות</p>
-      </div>
-      <div class="feature-box">
-        <h3>🎓 הסמכה רשמית</h3>
-        <p>תעודת הסמכה מוכרת מטעם משרד החינוך</p>
+      <div class="testimonial">
+        <p>"ההכשרה העניקה לי כלים מעשיים להתמודדות עם אתגרי החינוך העכשווי. התמיכה המקצועית והליווי האישי היו מעל למצופה."</p>
+        <div class="author">רועי לוי</div>
+        <div class="role">מורה למדעי המחשב, חטיבת ביניים</div>
       </div>
     </div>
   </section>
 
   <section class="container" id="contact">
-    <h2>צרו קשר</h2>
+    <h2>צרו קשר להתייעצות</h2>
     <div class="contact-form">
-      <form>
-        <input type="text" placeholder="שם מלא" required>
-        <input type="email" placeholder="דוא"ל" required>
-        <textarea rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit" class="btn-primary">שלח הודעה</button>
+      <form id="contactForm" onsubmit="sendEmail(event)">
+        <input type="hidden" name="to_name" value="David" />
+        <label for="user_name">שם מלא</label>
+        <input type="text" id="user_name" name="user_name" placeholder="שם מלא" required />
+        <label for="user_email">כתובת דואר אלקטרוני</label>
+        <input type="email" id="user_email" name="user_email" placeholder="your@email.com" required />
+        <label for="message">תוכן הפנייה</label>
+        <textarea id="message" name="message" rows="4" placeholder="נשמח לשמוע על הרקע המקצועי שלך והתעניינותך בתכנית" required></textarea>
+        <button type="submit">שליחת פנייה</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>© 2024 הטמעת AI בחינוך | כל הזכויות שמורות</p>
+    <p>© 2025 המכון להכשרת מורים בתחום הבינה המלאכותית | כל הזכויות שמורות</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
   <script>
-    // סקריפט לקרוסלה
-    let currentIndex = 0;
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
-    
-    // יצירת אינדיקטורים
-    testimonials.forEach((_, index) => {
-      const indicator = document.createElement('div');
-      indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
-      indicator.dataset.index = index;
-      indicator.addEventListener('click', () => goToTestimonial(index));
-      indicatorsContainer.appendChild(indicator);
-    });
+    (function() {
+      emailjs.init("WssTDTwKtdJD984XH");
+    })();
 
-    function goToTestimonial(index) {
-      testimonials[currentIndex].classList.remove('active');
-      currentIndex = index;
-      testimonials[currentIndex].classList.add('active');
-      updateIndicators();
+    function sendEmail(event) {
+      event.preventDefault();
+      emailjs
+        .sendForm("service_bpwxycu", "template_ebiirxt", event.target)
+        .then(
+          (result) => {
+            alert("פנייתך התקבלה בהצלחה. ניצור עמך קשר בהקדם.");
+            event.target.reset();
+          },
+          (error) => {
+            alert("אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.");
+          }
+        );
     }
-
-    function updateIndicators() {
-      document.querySelectorAll('.carousel-indicator').forEach((indicator, i) => {
-        indicator.classList.toggle('active', i === currentIndex);
-      });
-    }
-
-    // החלפה אוטומטית כל 5 שניות
-    setInterval(() => {
-      const nextIndex = (currentIndex + 1) % testimonials.length;
-      goToTestimonial(nextIndex);
-    }, 5000);
   </script>
 </body>
 </html>
+
+
+אני רוצה שתעזור לי לעצב ולכתוב תוכן בדף הנחיתה שלי אני יעלה לך את הקוד שאני רוצה שתבדוק מבחינת תקינות ואחר כך אני מעוניין לבצע שינויים
